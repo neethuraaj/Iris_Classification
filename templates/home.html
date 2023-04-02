@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Iris Flower Classification</title>
+    
+</head>
+<body background="/static/images/background1.jpg">
+<!-- Input Form -->
+<div  class="input form">
+  <form action="/predict"method="post" id="input head">
+    <h1 id="heading" style="color:blue;">Iris flower classification</h1>
+    <img src="/static/images/iris-flower.jpg" alt='Itris Flowers'>
+    <h3 id="input" style="color:blue;">Enter the measurements in cm </h3>
+    <input type="text" name="sepal_length" placeholder="Sepal Length (cm)" required="required" />
+    <input type="text" name="sepal_width" placeholder="Sepal Width (cm)" required="required" />
+	<input type="text" name="petal_length" placeholder="Petal Length (cm)" required="required" />
+	<input type="text" name="petal_width" placeholder="Petal Width (cm)" required="required" />
+    <br>
+    <br>
+    <button id="submit" type="submit" style="color:blue;">Submit</button>
+    
+    {% if result %}
+         <h2 id="result" style="color:red;">{{prediction_text}} {{ result[0] }}</h2>
+         
+         
+    {% endif %}
+  </form>
+ 
+</div>
+   
+</body>
+</html>
